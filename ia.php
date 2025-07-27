@@ -1,6 +1,8 @@
 <?php
 include('session_head.php');
+
 ?>
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
   <head>
@@ -8,13 +10,13 @@ include('session_head.php');
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-       <meta name="description" content=" CS&IT DEPARTMENT Website Developed By Khafsa IJaz And Habeeba Mateen">
-    <meta name="keywords" content="">
-    <meta name="author" content="Khafsa Ijaz">
-    <title>Add Notification</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="School Management System developed by Pak Softwares. The system provides the best and easy solution to handle school matters including admissions, fees, accounts, examination, sms, website controls, portal controls and many more.">
+    <meta name="keywords" content="school management system, accounts management, web app, biomatric systems, examination, fees system, learning management system (lms), portals">
+    <meta name="author" content="PAKSOFTWARE">
+    <title>Installment Collection Report</title>
+        <link rel="apple-touch-icon" href="uploads/rlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="uploads/rlogo.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/vendors.css">
@@ -38,7 +40,7 @@ include('session_head.php');
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END Custom CSS-->
   </head>
-  <?php
+    <?php
 include('navigation.php');
  ?>
 
@@ -52,52 +54,15 @@ include('navigation.php');
           
           </li>
           
-          <li style="background-color: #304A7B" class=" navigation-header"><span data-i18n="nav.category.layouts">Resonant</span><i class="ft-more-horizontal ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i>
+          <li style="background-color: #304A7B" class=" navigation-header"><span data-i18n="nav.category.layouts">ATLANTIS TOWERS</span><i class="ft-more-horizontal ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i>
           </li>
 
 
 
 
-<li  class=" nav-item"><a href="#"><i class="fa fa-money"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Front CMS</span></a>
-            <ul class="menu-content">
-
-
-   <?php
-                $sqladv = "SELECT pagename,link FROM menu where category='CMS' and status='1' and user='$rowsession[username]'";
-$resultadv = $conn->query($sqladv);
-
-  // output data of each row
-  while($rowadv = $resultadv->fetch_assoc()) {
-
-
-if ($rowadv['pagename']=='Add Notificaton')
-{
-
-
-   echo "<li class='active'><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
-              </li>";
-            }
-            else
-            {
-               echo "<li><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
-              </li>";
-            }
-
-
-  }
-
-
-
-
-
-  
-     ?> 
-
-
-
-              
-            </ul>
-          </li>
+ <?php include('twelve.php');
+    ?>
+       
 
 
  <?php include('thirteen.php');
@@ -112,18 +77,50 @@ if ($rowadv['pagename']=='Add Notificaton')
        
        
 
-          <?php include('includeadmissions.php');
-          ?>
-
-
-        
-
-              
-           
-    
-    <?php include('second.php');
+       
+ <?php include('first.php');
     ?>
+
+
+         <li  class=" nav-item"><a href="#"><i class="fa fa-money"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Installment Section</span></a>
+            <ul class="menu-content">
+
+
+   <?php
+                $sqladv = "SELECT pagename,link FROM menu where category='Installment Section' and status='1' and user='$rowsession[username]'";
+$resultadv = $conn->query($sqladv);
+
+  // output data of each row
+  while($rowadv = $resultadv->fetch_assoc()) {
+
+if ($rowadv['pagename']=='Collection Report')
+{
+    echo "<li class='active'><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
+              </li>";
+}
+
+else
+{
+
+
+   echo "<li><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
+              </li>";
+
+}
+
+  }
+     ?> 
+
+
+
               
+            </ul>
+          </li>
+
+    
+
+    
+   
 
             <?php include('third.php');
     ?>
@@ -167,35 +164,30 @@ if ($rowadv['pagename']=='Add Notificaton')
           
         </div>
      
-	<div class="row">
-		<div class="col-md-12">
-	        <div class="card">
-	     
-	               
+  <div class="row">
+    <div class="col-md-12">
+          <div class="card">
+       
+                 
               <div style="background-color: #f9d140" class="card-header">
-                  <h4 style="color:black" class="card-title" id="horz-layout-colored-controls">Welcome to Add Notification Form</h4>
-	                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
-        			<div class="heading-elements">
-	                    <ul class="list-inline mb-0">
-	                      <li style="color:black"><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                  <h4 style="color:black" class="card-title" id="horz-layout-colored-controls">Collection Report</h4>
+                  <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+              <div class="heading-elements">
+                      <ul class="list-inline mb-0">
+                        <li style="color:black"><a data-action="collapse"><i class="ft-minus"></i></a></li>
                           <li style="color:black"><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
                           <li style="color:black"><a data-action="expand"><i class="ft-maximize"></i></a></li>
                           <li style="color:black"><a data-action="close"><i class="ft-x"></i></a></li>
-	                    </ul>
-	                </div>
-	            </div>
-	            <div   class="card-content collpase show">
-	                <div class="card-body">
-						<div class="card-text">
-				
-						</div>
-            <div class="s text-center " role="" aria-label="Basic example">   <button type="button" class="btn btn-info btn-sm btn-glow" data-toggle="modal" data-target="#flipInY">
-                    Instructions
-                  </button>
- 
-
-    <a target="_blank" href="viewclasses"><button type="button"  class="btn btn-warning btn-sm btn-glow" >Notifications List</button></a>
-   
+                      </ul>
+                  </div>
+              </div>
+              <div   class="card-content collpase show">
+                  <div class="card-body">
+            <div class="card-text">
+        
+            </div>
+            <div class="s text-center " role="" aria-label="Basic example">   
+       
                     <div class="modal animated flipInY text-left" id="flipInY" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -222,30 +214,55 @@ if ($rowadv['pagename']=='Add Notificaton')
                   </div>
 
 </div>
-	                      <form class="form form-horizontal" method="POST">
-                        <div class="form-body">
-                          <h4 sty class="form-section" style="color: black" ><i class="fa fa-user"></i> Notification Info</h4>
-                          <div class="row">
-                             <div class="col-md-12">
+
+            <form class="form" method="POST" action="iapdf.php">
+              <div class="form-body">
+                <h4 class="form-section"><i class="fa fa-user"></i> Report Requirments</h4>
+                <div class="row">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <label style="color: black" for="projectinput1"><b>Type Notification</b></label>
-                      <textarea style="box-shadow: 0 0 4px #333D47;background-color: #4C6586;color:white;" type="text" id="noti"   class="form-control" placeholder=""  name="noti"></textarea>
+                      <label style="color:black" for="userinput1">Start Date</label>
+                      <input style="box-shadow: 0 0 4px #333D47;background-color: #4C6586;color:white;" type="date" id="date1" name="date" value="<?php echo date("Y-m-d")?>" class="form-control border-primary" placeholder="Name" >
                     </div>
                   </div>
-                         
-                    
-                              </form>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label style="color:black" for="userinput2">End Date</label>
+                      <input style="box-shadow: 0 0 4px #333D47;background-color: #4C6586;color:white;" type="date" id="date2" name="date1" value="<?php echo date("Y-m-d")?>" class="form-control border-primary" placeholder="Company" >
+                    </div>
+                  </div>
+
+                
+
+  
+
+                </div>
+              
+                
+
+
+              <div class="form-actions ">
+                 <button tyle="background-color: #ffd338;color:black
+                       ; !important" type="submit"  id="save" class="btn btn-warning btn-min-width btn-glow mr-1 mb-1">
+                  <i class="fa fa-check-square-o"></i> View Collection Report
+                </button>
+              
+              </div>
+            </form>
+                   
                                     </div>
                   
 
                   </div>
-                       <button id="save" style="background-color: #ffd338;color:black
-                       ; !important" type="submit" class="btn btn-warning">
-                                  <i class="fa fa-check-square-o"></i> Show on Website
-                              </button>
+                       
               </div>
           </div>
       </div>
+      
+      
+      
+      
+      
   </div>
 
  
@@ -255,18 +272,20 @@ if ($rowadv['pagename']=='Add Notificaton')
       </div>
     </div>
 
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 </div>
 
 
-<?php
-include('footer.php');
-?>
+
+
+    <footer style="background-color: #F9D140" class="footer footer-static footer-light navbar-border">
+      <p style="color:black" class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span style="color:black" class="float-md-left d-block d-md-inline-block">Copyright  &copy; 2021 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PAKSOFTWARES </a>, All rights reserved. </p>
+    </footer>
 
     <!-- BEGIN VENDOR JS-->
     <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
@@ -287,19 +306,28 @@ include('footer.php');
 $(document).ready(function(){
   $("#save").click(function(){
 
-       var noti=$('#noti').val();
-  
+       var cname=$('#cname').val();
+    var cteacher=$('#cteacher').val();
+
+    var cgroup=$('#cgroup').val();
+
+
+      var cfees=$('#cfees').val();
+       
+
+      var cperiods=$('#cperiods').val();
+
          
- console.log(noti);
+ 
 
 
 
-if (noti=='')
+if (cname=='')
 {
 
                             swal({
     title: 'Insertion Failed.....!',
-    text: 'Please Write Notification.....',
+    text: 'Please Write Class Name.....',
     type: 'danger',
     timer: 2500,
     showConfirmButton: true
@@ -309,14 +337,30 @@ if (noti=='')
 
 }
 
+if (cfees=='')
+{
 
-     if(noti!='' )
+                            swal({
+    title: 'Insertion Failed.....!',
+    text: 'Please Write Class Fees.....',
+    type: 'danger',
+    timer: 2500,
+    showConfirmButton: true
+  }).then(function() {
+    document.getElementById('cfees').focus();
+  });
+
+}
+
+
+
+     if(cname!='' && cfees!='')
      {
  $.ajax({
                   type:'POST',
-                    url: 'savenoti.php',
+                    url: 'saveclass.php',
                     dataType: 'json',
-                   data: {noti:noti},
+                   data: {cname:cname,cteacher:cteacher,cgroup:cgroup,cfees:cfees,cperiods:cperiods},
                       success:function(data){
 console.log(data);
 if (data[0]['success']=='success')
@@ -324,22 +368,40 @@ if (data[0]['success']=='success')
 
     swal({
     title: 'Success Alert',
-    text: 'Notification Shown on Website Successfully.....',
+    text: 'Class Added Successfully.....',
     type: 'success',
     timer: 2500,
     showConfirmButton: false
   }).then(function() {
-    document.getElementById('noti').focus();
+    document.getElementById('cname').focus();
   });
 
 
 
-                    
+                      $('#cname').val("");
+                            $('#cfees').val(0);
                         
                                              }
 
 
 
+ if (data[0]['duplicate']=='duplicate')
+                        {
+          $('#cname').val("");
+                            $('#cfees').val(0);
+
+                            swal({
+    title: 'Duplicate Alert.....!',
+    text: 'Duplicate Class Found.....',
+    type: 'danger',
+    timer: 2500,
+    showConfirmButton: false
+  }).then(function() {
+    document.getElementById('cname').focus();
+  });
+               $('#cname').val("");
+                            $('#cfees').val(0);
+                        }
 
 
                     
