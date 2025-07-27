@@ -3,44 +3,26 @@ include('session_head.php');
  if(isset($_POST['submit']))
 {  
 
-$fname = $_POST['fname'] ;
-$lname = $_POST['lname']; 
-$qualification = $_POST['qualification']; 
-$designation= $_POST['designation'];
-$university = $_POST['university']; 
-$officeno= $_POST['officeno'];
-$status= $_POST['status'];
- $phone= $_POST['phone'];
-$email= $_POST['email']; 
- $passing_year= $_POST['passing_year'];
-$major= $_POST['major']; 
+
+$desig= $_POST['desig'];
+$organization = $_POST['organization']; 
+$from_uni= $_POST['from_uni'];
+$to_uni= $_POST['to_uni'];
+
+$id= $_POST['id'];
+ 
+
 
     
     
-    $file_name=$_POST['file_name'];
-     $file =$_FILES['file']['name'];
-    $file_loc = $_FILES['file']['tmp_name'];
- $file_size = $_FILES['file']['size'];
- $file_type = $_FILES['file']['type'];
-if ($file!='')
-{
-  $folder="uploads/";
- $date=date("Y-m-d");
- move_uploaded_file($file_loc,$folder.$file);
-  //move_uploaded_file($file_loc1,$folder.$file1);
-}
+
 if($file=='')
 {
-            echo '<script type="text/javascript">';
-echo 'setTimeout(function () { 
-          swal("Error", "Upload file failed!", "error"); 
-      }, 1000);';
-echo '</script>';
+     $file = "Nill";
 }
-
      
-      else { $sql = "INSERT INTO faculty (fname,lname,qualification,designation,university,officeno,file,status,phone,email,passing_year,major)
-VALUES ('$fname', '$lname', '$qualification','$designation','$university','$officeno','$file','$status','$phone','$email','$passing_year','$major')";
+      $sql = "INSERT INTO experience (desig,from_uni,to_uni,organization,fid)
+VALUES ('$desig','$from_uni','$to_uni','$organization','$id')";
 if ($conn->query($sql) === TRUE) {
   echo '<script type="text/javascript">';
   echo 'setTimeout(function () { swal("SUCCESS","Faculty details Uploaded Successfully!","success");';
@@ -48,7 +30,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 
-}
+} else {
 
 }
 }
@@ -60,7 +42,7 @@ if ($conn->query($sql) === TRUE) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <meta name="description" content=" CS&IT DEPARTMENT Website Developed By Khafsa IJaz And Habeeba Mateen">
+    <meta name="description" content=" CS&IT DEPARTMENT Website Developed By Khafsa IJaz And Habeeba Mateen">
     <meta name="keywords" content="">
     <meta name="author" content="Khafsa Ijaz">
     <title>Add Faculty</title>
@@ -158,7 +140,7 @@ $resultadv = $conn->query($sqladv);
   while($rowadv = $resultadv->fetch_assoc()) {
 
 
-if ($rowadv['pagename']=='Add Faculty Details')
+if ($rowadv['pagename']=='Faculty Experience')
 {
     echo "<li class='active'><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
               </li>";
@@ -264,97 +246,70 @@ else
 </div>
                        <form class="form" method="POST" enctype="multipart/form-data">
                             <div class="form-body">
-                                <h4 class="form-section"><i class="ft-user"></i>Faculty Main Info</h4>
+                                <h4 class="form-section"><i class="ft-user"></i>Faculty Experience</h4>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">First Name <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white;border:1px solid #5B8343"  type="text" id="fname" autofocus="true" class="form-control" value="" name="fname">
-                                        </div>
-                  
-                                    </div>
+                                    
                                    
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">Last Name <span style="color:red">*</span> </label>
-                                            <input style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="lname" value="" autofocus="true" class="form-control" value="" name="lname">
-                                        </div>
- </div>
-            
-
-                 
-            
-
-                    
-
-                                       <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">Profile Image <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="file" id="file" value="" autofocus="true" class="form-control" value="" name="file">
-                                        </div>
- </div>
-        
-                           <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">Qualification <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="qualification" value="" autofocus="true" class="form-control" value="" name="qualification">
-                                        </div>
- </div>
                       <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="projectinput1">Passing Year <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="passing_year" value="" autofocus="true" class="form-control" value="" name="passing_year">
+                                            <label for="projectinput1">Name <span style="color:red">*</span> </label>
+                                            <select  style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="id" value="" autofocus="true" class="form-control" value="" name="id">
+
+                               
+                               <?php
+
+include('connection.php');
+                          $sql = "SELECT id,fname FROM faculty";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+
+
+
+
+   echo "<option value='".$row['id']."''>".$row['fname']."</option>";
+ 
+ }
+  
+}            ?>
+              
+                                              
+                                            </select>
                                         </div>
  </div>
-                      <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">Major <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="major" value="" autofocus="true" class="form-control" value="" name="major">
-                                        </div>
- </div>
+      
                  
                               <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="projectinput1">Designation <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="designation" value="" autofocus="true" class="form-control" value="" name="designation">
+                                            <input  style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="desig" value="" autofocus="true" class="form-control" value="" name="desig">
                                         </div>
  </div>
                        <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="projectinput1">University <span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="university" value="" autofocus="true" class="form-control" value="" name="university">
+                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="organization" value="" autofocus="true" class="form-control" value="" name="organization">
                                         </div>
  </div>
                        <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="projectinput1">Office No<span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="officeno" value="" autofocus="true" class="form-control" value="" name="officeno" maxlength="11">
+                                            <label for="projectinput1">From<span style="color:red">*</span> </label>
+                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="from_uni" value="" autofocus="true" class="form-control" value="" name="from_uni">
                                         </div>
  </div>
           <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="projectinput1">Status<span style="color:red">*</span> </label>
+                                            <label for="projectinput1">TO<span style="color:red">*</span> </label>
                                            
-                                            <select style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="status" value="" autofocus="true" class="form-control" value="" name="status">
-                                                <option>Active</option>
-                                                <option>In_active</option>
-                                                <option>Leave</option>
-                                            </select>
+                                            <input style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="to_uni" value="" autofocus="true" class="form-control" value="" name="to_uni">
+                                              
+                                            
                                         </div>
  </div>
-               <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">Phone<span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="text" id="phone" value="" autofocus="true" class="form-control" value="" name="phone" maxlength="11">
-                                        </div>
- </div>
-               <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="projectinput1">Email<span style="color:red">*</span> </label>
-                                            <input s style="box-shadow: 0 0 4px #333D47;background-color: #1090CD;color:white; border:1px solid #5B8343"  type="email" id="email" value="" autofocus="true" class="form-control" value="" name="email">
-                                        </div>
- </div>
+              
+         
           
                          
              
@@ -389,7 +344,7 @@ else
                             <div class="form-actions">
                             
                                 <button  name="submit" style="background-color: #5B8343;color:white;border:1px solid #062F4F" type="submit" class="btn btn-outline-info ">
-                                    <i class="fa fa-check"></i> Add New Faculty
+                                    <i class="fa fa-check"></i> Add Experience
                                 </button>
                             </div>
                             </form>
