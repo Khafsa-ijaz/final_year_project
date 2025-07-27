@@ -1,0 +1,412 @@
+<?php
+include('session_head.php');
+?>
+<?php
+ $state='1';
+ $sum=0;
+?>
+<?php
+include('connection.php');
+if(isset($_POST['save'])){
+  $id=$_POST['user'];
+  $status=$_POST['status'];
+
+  for($i=0;$i<count($id);$i++){
+$sql3 = "UPDATE smenu SET status='$status[$i]' WHERE id='$id[$i]'";
+
+if ($conn->query($sql3) === TRUE) {
+}
+  
+header("Location: access.php ");
+}
+
+ }
+?>
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+  <head>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="School Management System developed by Pak Softwares. The system provides the best and easy solution to handle school matters including admissions, fees, accounts, examination, sms, website controls, portal controls and many more.">
+    <meta name="keywords" content="school management system, accounts management, web app, biomatric systems, examination, fees system, learning management system (lms), portals">
+    <meta name="author" content="PAKSOFTWARE">
+    <title>Manage Notifications</title>
+   <link rel="apple-touch-icon" href="crop.png">
+    <link rel="shortcut icon" type="image/x-icon" href="crop.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CMuli:300,400,500,700" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/charts/morris.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/extensions/unslider.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/weather-icons/climacons.min.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN ROBUST CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/app.css">
+    <!-- END ROBUST CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/calendars/clndr.css">
+        <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/meteocons/style.min.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <!-- END Custom CSS-->
+  </head>
+ <?php
+include('navigation.php');
+ ?>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <div style="background-color: #304a7b" class="main-menu menu-fixed menu-dark menu-accordion    menu-shadow " data-scroll-to-active="true">
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li style='background-color: #304A7B' class=" nav-item"><a href="dashboard"><i class="icon-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span></a>
+          
+          </li>
+          
+          <li style="background-color: white" class=" navigation-header"><span data-i18n="nav.category.layouts"><img style='height:60px;object-fit:contain;margin-top:-25px' src="11.png"></img></span><i class="ft-more-horizontal ft-minus" data-toggle="tooltip" data-placement="right" data-original-title="Layouts"></i>
+          </li>
+
+
+
+
+ <?php include('twelve.php');
+    ?>
+       
+
+
+ <?php include('thirteen.php');
+    ?>
+
+
+ <?php include('fourteen.php');
+    ?>
+    
+    
+     <?php include('fifteen.php');
+    ?>
+    
+
+
+         
+
+
+       
+       
+       <?php include('first.php');
+       ?>
+
+
+
+         
+    
+    <?php include('second.php');
+    ?>
+              
+
+            <?php include('third.php');
+    ?>
+        
+          <?php include('fourth.php');
+    ?>
+        
+          <?php include('fifth.php');
+    ?>
+        
+        <li  class=" nav-item"><a href="#"><i class="icon-layers"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Portals Section</span></a>
+            <ul class="menu-content">
+
+
+   <?php
+                $sqladv = "SELECT pagename,link FROM menu where category='Portals Section' and status='1' and user='$rowsession[username]'";
+$resultadv = $conn->query($sqladv);
+
+  // output data of each row
+  while($rowadv = $resultadv->fetch_assoc()) {
+
+
+if ($rowadv['pagename']=='Manage Access Control')
+{
+    echo "<li class='active'><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
+              </li>";
+}
+
+else
+{
+   echo "<li><a class='menu-item' href='$rowadv[link]' data-i18n='nav.vertical_nav.vertical_nav_fixed'>$rowadv[pagename]</a>
+              </li>";
+}
+
+  }
+     ?> 
+      
+            </ul>
+          </li>
+
+        
+          <?php include('seventh.php');
+    ?>
+        
+          <?php include('eight.php');
+    ?>
+        
+          <?php include('ninth.php');
+    ?>
+        
+          <?php include('tenth.php');
+    ?>
+        
+          <?php include('eleven.php');
+    ?>
+         
+      
+        
+
+         
+         </ul>
+       </div>
+     </div>
+    <div class="app-content content">
+      <div class="content-wrapper">
+        <div class="content-header row">
+          
+          
+        </div>
+     
+  <div class="row">
+    <div class="col-md-12">
+          <div class="card">
+       
+                 
+              <div style="background-color: #3EBBE5" class="card-header">
+                     
+      
+
+                <h4 style='color:white' class="card-title">Manage Staff Access Control <b><u></b></u> <b><i style="color:red"></i><u></u></b></h4>
+                  <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+              <div class="heading-elements">
+                      <ul class="list-inline mb-0">
+                        <li style="color:white"><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                          <li style="color:white"><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                          <li style="color:white"><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                          <li style="color:white"><a data-action="close"><i class="ft-x"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+    <form method="post" action="#">
+                        <input type="hidden" value="<?php echo $date?>" name="date"/>
+                                               <input type="hidden" value="<?php echo $format?>" name="month"/>
+              <div style="background-color: #304a7b"  class="card-content collpase show">
+
+          <section   id="file-export">
+
+    <div class="row">
+        <div class="col-12">
+
+            <div   class="card">
+               
+                <div class="card-content collapse show">
+  <form method="post" action="#">
+                        <input type="hidden" value="<?php echo $date?>" name="date"/>
+                                               <input type="hidden" value="<?php echo $format?>" name="month"/>
+                    <div class="card-body card-dashboard">
+                
+
+                        <table sty class="table table-striped table-bordered ">
+                            <thead>
+                                <tr>
+                                   <th style="background-color:#304A7B;color: white ">S.#</th>
+                                      <th style="background-color:#304A7B;color: white ">Code</th>
+                                      
+                                       <th style="background-color:#304A7B;color: white ">WebPage</th>
+                                        <th style="background-color:#304A7B;color: white ">Category</th>
+                                      
+                                      
+                                    <th style="background-color:#304A7B;color: white  ">Status</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                               
+                                
+                               <?php
+  $count=0;
+            include('connection.php');
+$sql6 = "SELECT * FROM smenu order by category ASC";
+$result6 = $conn->query($sql6);
+
+if ($result6->num_rows > 0) {
+  // output data of each row
+  while($row6 = $result6->fetch_assoc()) {
+   $status=$row6['status'];
+    $user=$row6['user'];
+    $pagename=$row6['pagename'];
+      $category=$row6['category'];
+       $id=$row6['id'];
+ 
+
+
+           echo " <tr>
+             
+                     <td>".++$count."</td>
+                  
+                     <td><b><input type='text' readonly class='form-control'  value=".$id." name='user[]'/></b></td>
+                  <td>$pagename</td>
+                  <td>$category</td>
+                     
+   ";
+
+
+
+
+
+if ($status=='1')
+{
+
+
+ echo "
+          
+                 <td>
+
+ <select name='status[]' class=' form-control'>
+ <option value='$state'> Show </option>
+  <option value='0'> Hide </option>
+    
+
+  </select>
+
+
+</td>
+      
+                  ";
+                 }
+
+
+if ($status=='0')
+{
+
+
+echo  "
+          
+                 <td>
+
+ <select name='status[]' class=' form-control'>
+ <option  value='0'> Hide </option>
+  <option value='1'> Show </option>
+  </select>
+
+
+</td>
+      
+                  ";
+                 }
+
+
+
+
+
+
+               
+              
+              echo "
+                    
+               </tr>
+                               
+              ";
+  }
+}
+
+
+           ?>
+                  
+
+       
+                            </tfoot>
+                          </tbody>
+
+
+                        </table>
+                          
+                    </div>
+                </div>
+                 <p align="center"><button type="submit" class="btn btn-info" name="save">Assign Roles</button></p>
+              </form>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+</section>
+<!-- // Basic form layout section end -->
+        </div>
+      </div>
+    </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+ <?php include('footer.php');
+ ?>
+
+    <!-- BEGIN VENDOR JS-->
+     <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="../../../app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/buttons.flash.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/jszip.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/pdfmake.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/vfs_fonts.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/buttons.html5.min.js"></script>
+    <script src="../../../app-assets/vendors/js/tables/buttons.print.min.js"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN ROBUST JS-->
+    <script src="../../../app-assets/js/core/app-menu.js"></script>
+    <script src="../../../app-assets/js/core/app.js"></script>
+    <!-- END ROBUST JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+  
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- END PAGE LEVEL JS-->
+  </body>
+</html>
+
+<script type="text/javascript">
+   $('.file-export').DataTable({
+  
+
+
+         "scrollY":        "800px",
+    "scrollCollapse": true,
+    "paging":         false,
+   "scrollY":        true,
+
+       
+             
+
+
+
+    });
+
+
+    $('.buttons-csv').addClass(' fa fa-file-excel-o btn btn-outline-success btn-sm btn-min-width btn-glow mr-1');
+     $('.buttons-excel').addClass(' fa fa-file-excel-o btn btn-outline-success btn-sm btn-min-width btn-glow mr-1');
+      $('.buttons-pdf').addClass('fa fa-file-pdf-o btn btn-outline-danger btn-sm btn-min-width btn-glow mr-1');
+       $('.buttons-colvis').addClass('btn btn-outline-warning btn-sm btn-min-width btn-glow mr-1');
+</script>

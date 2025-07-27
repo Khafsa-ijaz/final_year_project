@@ -1,0 +1,655 @@
+RewriteEngine on 
+
+ErrorDocument 404 "PAGE NOT FOUND"
+
+RewriteRule ^addemployee  addemployee.php [NC,L]
+
+RewriteRule ^pdfprint  pdfprint.php [NC,L]
+
+
+RewriteRule ^ByName  byname.php [NC,L]
+
+
+RewriteRule ^fundstransfer  fundstransfer.php [NC,L]
+
+
+RewriteRule ^sectionprojects  sectionprojects.php [NC,L]
+RewriteRule ^sectionview  viewsection.php [NC,L]
+
+
+
+RewriteRule ^projectsreports  projectsreports.php [NC,L]
+
+RewriteRule ^addfinance  addfinance.php [NC,L]
+
+
+RewriteRule ^allsectionprojects  allsectionprojects.php [NC,L]
+
+
+
+
+RewriteRule ^StatewiseDailyTask  statedaily.php [NC,L]
+
+
+
+
+
+RewriteRule ^access  access.php [NC,L]
+
+RewriteRule ^payable  payable.php [NC,L]
+
+
+RewriteRule ^receviable  receviable.php [NC,L]
+
+RewriteRule ^financereport  financereport.php [NC,L]
+
+
+RewriteRule ^bankledger  bankledger.php [NC,L]
+
+
+
+RewriteRule ^Employeetasks  emptasks.php [NC,L]
+
+
+RewriteRule ^createuser  createuser.php [NC,L]
+
+
+
+RewriteRule ^assignroles  assignroles.php [NC,L]
+
+
+
+RewriteRule ^viewnotifications viewnotifications.php [NC,L]
+
+
+
+
+RewriteRule ^managenotifications  managenotifications.php [NC,L]
+
+
+
+
+
+
+RewriteRule ^beforecomplaints  beforecomplaints.php [NC,L]
+
+RewriteRule ^manageportals  manageportals.php [NC,L]
+
+
+
+
+
+RewriteRule ^Performancereport  preport.php [NC,L]
+
+
+
+
+RewriteRule ^addprojects  addprojects.php [NC,L]
+
+
+
+RewriteRule ^dailytaskreport  dailytaskreport.php [NC,L]
+
+
+
+
+RewriteRule ^GenerateSalary  generatesalary.php [NC,L]
+
+
+
+
+RewriteRule ^DeleteSalary  deletesalary.php [NC,L]
+
+RewriteRule ^DisbursedSalary  disbursed.php [NC,L]
+
+
+RewriteRule ^Reports  salaryreports.php [NC,L]
+
+
+RewriteRule ^taskreports  taskreports.php [NC,L]
+
+
+RewriteRule ^dashboard  main.php [NC,L]
+
+
+RewriteRule ^StateReport  statereport.php [NC,L]
+
+
+RewriteRule ^DailyAttendance  dailyatten.php [NC,L]
+
+
+
+RewriteRule ^SalaryDetails  adddetails.php [NC,L]
+
+RewriteRule ^beforegenerate  beforegenerate.php [NC,L]
+
+
+
+
+
+RewriteRule ^DailySummary  dailysummary.php [NC,L]
+
+
+
+RewriteRule ^MonthlyAttendance  monthlyattendance.php [NC,L]
+
+
+
+
+RewriteRule ^SummaryMonthly  summarymonthly.php [NC,L]
+
+
+
+
+
+RewriteRule ^attendancereports  attendancereports.php [NC,L]
+
+
+RewriteRule ^salaryreport  salaryreports.php [NC,L]
+
+
+RewriteRule ^PrintAllSlips  printallslips.php [NC,L]
+
+
+
+
+RewriteRule ^ById  byid.php [NC,L]
+
+RewriteRule ^ByCnic  bycnic.php [NC,L]
+
+
+RewriteRule ^ByMob  bymob.php [NC,L]
+
+
+RewriteRule ^Detailsearch  detailsearch.php [NC,L]
+
+
+
+RewriteRule ^search  search.php [NC,L]
+
+RewriteRule ^Departmentwise  departmentwise.php [NC,L]
+
+
+
+RewriteRule ^BasicSalary  bsal.php [NC,L]
+
+RewriteRule ^ServiceReport  service.php [NC,L]
+
+RewriteRule ^StaffSummary  staffsummary.php [NC,L]
+
+RewriteRule ^addfloor  addfloor.php [NC,L]
+
+RewriteRule ^floorprice  fprice.php [NC,L]
+
+
+RewriteRule ^pa  pa.php [NC,L]
+
+RewriteRule ^dashboard  addfloor.php [NC,L]
+
+
+
+
+RewriteRule ^floorslist  floorslist.php [NC,L]
+
+
+RewriteRule ^Registrationform  registration.php [NC,L]
+
+
+RewriteRule ^addstudent  addstudent.php [NC,L]
+
+
+RewriteRule ^addclass  addclass.php [NC,L]
+
+RewriteRule ^addclass  addclass.php [NC,L]
+RewriteRule ^addclass1  addclass1.php [NC,L]
+
+
+RewriteRule ^dashboard  index.php [NC,L]
+
+
+RewriteRule ^session  session.php [NC,L]
+
+
+
+RewriteRule ^employeeheads  empheads.php [NC,L]
+RewriteRule ^viewfinance  viewfinance.php [NC,L]
+
+RewriteRule ^addbanks addbanks.php [NC,L]
+
+RewriteRule ^receiveincome receiveincome.php [NC,L]
+
+
+RewriteRule ^projectslist  projectslist.php [NC,L]
+
+
+
+RewriteRule ^assigntasks  assigntasks.php [NC,L]
+
+RewriteRule ^beforemanage  beforemanage.php [NC,L]
+
+
+
+
+RewriteRule ^classwisestudentlist  classwiselist.php [NC,L]
+
+
+RewriteRule ^classheads  classheads2.php [NC,L]
+
+RewriteRule ^pdfpetty  pdfpetty.php [NC,L]
+
+
+RewriteRule ^pdfincomeledger  pdfincomeledger.php [NC,L]
+
+
+RewriteRule ^pdfexpenseledger  pdfexpenseledger.php [NC,L]
+
+
+
+RewriteRule ^incomeledger  incomeledger.php [NC,L]
+
+RewriteRule ^expenseledger  expenseledger.php [NC,L]
+
+
+RewriteRule ^notification  notification.php [NC,L]
+
+
+
+
+
+RewriteRule ^incomeexpenseledger  incomeexpenseledger.php [NC,L]
+
+
+
+RewriteRule ^pettycashledger  pettycashledger.php [NC,L]
+
+
+RewriteRule ^viewgroups  viewcheads1.php [NC,L]
+
+RewriteRule ^login  login.php [NC,L]
+
+RewriteRule ^generatefee  generatefee.php [NC,L]
+RewriteRule ^editfee  editfee.php [NC,L]
+
+RewriteRule ^receivefee  receivefeeregno.php [NC,L]
+
+RewriteRule ^deletebill  deletebill.php [NC,L]
+
+RewriteRule ^feeperiod  feeperiod.php [NC,L]
+
+RewriteRule ^viewfees  viewfees.php [NC,L]
+
+RewriteRule ^staffattendance  staffattendence.php [NC,L]
+
+
+
+RewriteRule ^advancesalary  advancesalary.php [NC,L]
+
+
+
+
+RewriteRule ^marksingle  marksingle.php [NC,L]
+
+
+
+
+RewriteRule ^absentleave  absentleave.php [NC,L]
+
+RewriteRule ^leaveabsentlist  leaveabsentlist.php [NC,L]
+RewriteRule ^listleaveabsentpdf  listleaveabsentpdf.php [NC,L]
+
+
+RewriteRule ^deletestaffattendance  deletestaffattendance.php [NC,L]
+RewriteRule ^deletestudentattendance  deletestudentattendance.php [NC,L]
+
+
+RewriteRule ^markstaff  markstaff.php [NC,L]
+
+RewriteRule ^addbanks  addbanks.php [NC,L]
+
+RewriteRule ^viewbanks  viewbanks.php [NC,L]
+
+
+RewriteRule ^bankbalance  bankbalance.php [NC,L]
+
+RewriteRule ^receiveincome  receiveincome.php [NC,L]
+
+RewriteRule ^transferincome  transferincome.php [NC,L]
+
+
+RewriteRule ^makeexpense  makeexpense.php [NC,L]
+
+
+RewriteRule ^ledgerbankpetty  ledgerbankpetty.php [NC,L]
+
+
+
+RewriteRule ^pdfledgerbankpetty   pdfledgerbankpetty.php [NC,L]
+
+
+RewriteRule ^incexpheads  incexpheads.php [NC,L]
+
+RewriteRule ^bankpettyledger  bankpettyledger.php [NC,L]
+
+
+
+RewriteRule ^progressreportclasspdf  progressreportclasspdf.php [NC,L]
+
+
+
+
+
+
+
+
+RewriteRule ^pdfabsentsheet  pdfabsentsheet.php [NC,L]
+
+
+
+RewriteRule ^pdffailsheet  pdffailsheet.php [NC,L]
+
+
+RewriteRule ^viewincexpheads  viewincexpheads.php [NC,L]
+
+
+
+RewriteRule ^subjectsheet  subjectsheet.php [NC,L]
+
+
+RewriteRule ^pdfclassattendance  pdfclassattendance.php [NC,L]
+
+
+
+RewriteRule ^pdfschoolattendance  pdfschoolattendance.php [NC,L]
+
+
+
+
+
+RewriteRule ^childsheet   childsheet.php [NC,L]
+
+RewriteRule ^classattendance   classattendance.php [NC,L]
+
+RewriteRule ^schoolattendance   schoolattendance.php [NC,L]
+
+
+
+RewriteRule ^reportclassattendance   reportclassattendance.php [NC,L]
+
+RewriteRule ^reportschoolattendance   reportschoolattendance.php [NC,L]
+
+
+
+
+
+RewriteRule ^pdfchildsheet   pdfchildsheet.php [NC,L]
+
+
+
+
+RewriteRule ^absentsheet  absentsheet.php [NC,L]
+
+
+RewriteRule ^failsheet  failsheet.php [NC,L]
+
+
+
+
+
+
+RewriteRule ^manualsheet  manualsheet.php [NC,L]
+
+RewriteRule ^pdfmanualsheet  pdfmanualsheet.php [NC,L]
+
+
+
+RewriteRule ^pdfstudentprogress  pdfstudentprogress.php [NC,L]
+
+
+
+
+RewriteRule ^studentpreport  studentpreport.php [NC,L]
+
+
+
+RewriteRule ^progressreport  classprogressreport.php [NC,L]
+
+
+
+RewriteRule ^pdfclasssubjectwise  pdfclasssubjectwise.php [NC,L]
+
+
+
+
+RewriteRule ^pdfsubjectsheet  pdfsubjectsheet.php [NC,L]
+
+
+
+RewriteRule ^classsubjectwise  classsubjectwise.php [NC,L]
+
+
+
+RewriteRule ^editmark  editmark.php [NC,L]
+
+RewriteRule ^deleteresult  deleteresult.php [NC,L]
+
+RewriteRule ^classsheet  classsheet.php [NC,L]
+
+
+RewriteRule ^positionsheet  positionsheet.php [NC,L]
+
+
+RewriteRule ^classposition  classpositionsheet.php [NC,L]
+
+
+RewriteRule ^sheetclassresult  sheetclasspdf.php [NC,L]
+
+
+
+RewriteRule ^markresult  markresult.php [NC,L]
+
+RewriteRule ^resultentry  resultentry.php [NC,L]
+
+
+RewriteRule ^termslist  listtermclasswise.php [NC,L]
+
+
+
+RewriteRule ^subjectmarks  subjectmarks.php [NC,L]
+
+
+RewriteRule ^viewmarks  viewmarks.php [NC,L]
+
+RewriteRule ^markslist  markslist.php [NC,L]
+
+RewriteRule ^studentchart  studentchart.php [NC,L]
+RewriteRule ^stuchartpdf  stuchartpdf.php [NC,L]
+
+RewriteRule ^gradesetting  gradersetting.php [NC,L]
+RewriteRule ^addterm  addterm.php [NC,L]
+RewriteRule ^editresult  editresult.php [NC,L]
+
+
+
+RewriteRule ^studentdatewisereport  studentdatewisereport.php [NC,L]
+
+
+RewriteRule ^studentmonthwisepdf  studentmonthwisepdf.php [NC,L]
+
+
+RewriteRule ^monthwisereportstudent  monthwisereportstudent.php [NC,L]
+
+
+RewriteRule ^dailyreport  dailyreport.php [NC,L]
+
+RewriteRule ^dailylist  dailylist.php [NC,L]
+
+RewriteRule ^dailypdf  dailypdf.php [NC,L]
+
+RewriteRule ^studentmark  studentmark.php [NC,L]
+
+
+
+RewriteRule ^studentattendance  studentattendance.php [NC,L]
+
+
+
+
+
+
+
+
+RewriteRule ^feecharts  charts.php [NC,L]
+
+
+RewriteRule ^classwisemark  classwisemark.php [NC,L]
+
+
+
+RewriteRule ^schoolfeechart  schoolwisefeechart.php [NC,L]
+RewriteRule ^classwisechart  classwisechart.php [NC,L]
+RewriteRule ^pdfclasswise  pdfclasswise.php [NC,L]
+RewriteRule ^chartschoolpdf  chartschoolpdf.php [NC,L]
+
+
+RewriteRule ^monthwisereport  monthwisereport.php [NC,L]
+
+RewriteRule ^datewisereport  datewisereport.php [NC,L]
+RewriteRule ^staffchart  staffchart.php [NC,L]
+
+RewriteRule ^chartpdf  chartpdf.php [NC,L]
+
+RewriteRule ^membermonthwisepdf  membermonthwisepdf.php [NC,L]
+
+
+
+RewriteRule ^viewfeeperiods  viewfeeperiods.php [NC,L]
+
+RewriteRule ^feestudentpdf  feestudentpdf.php [NC,L]
+
+RewriteRule ^printedvouchers  printedvouchers.php [NC,L]
+
+RewriteRule ^vouchers  vouchers.php [NC,L]
+
+RewriteRule ^pdfvouchers  pdfvouchers.php [NC,L]
+
+RewriteRule ^studentfeechart  studentfeechart.php [NC,L]
+
+RewriteRule ^summary  summary.php [NC,L]
+RewriteRule ^headwisesummary  headsummarypdf.php [NC,L]
+
+RewriteRule ^overview  overview.php [NC,L]
+RewriteRule ^listoverview  listoverview.php [NC,L]
+RewriteRule ^classpdfoverview  classoverviewpdf.php [NC,L]
+RewriteRule ^classprint  classprint.php [NC,L]
+
+RewriteRule ^slipspdf  slipspdf.php [NC,L]
+
+RewriteRule ^schoolprint  schoolprint.php [NC,L]
+RewriteRule ^allschoolpdf  allschoolpdf.php [NC,L]
+
+RewriteRule ^schoolvoucherslist  schoolvoucherslist.php [NC,L]
+
+RewriteRule ^listpdfvouchers  listpdfvouchers.php [NC,L]
+
+
+
+
+RewriteRule ^viewemployees  viewemployees1.php [NC,L]
+
+RewriteRule ^viewsessions  viewsessions.php [NC,L]
+
+
+RewriteRule ^viewstudents  viewstudents1.php [NC,L]
+
+
+RewriteRule ^viewclasswisestudents  viewstudent3.php [NC,L]
+
+RewriteRule ^viewfloorprices  viewfloorprices.php [NC,L]
+RewriteRule ^categorywisefloorprice  categorywisefloorprice.php [NC,L]
+
+
+RewriteRule ^viewregforms  viewregforms.php [NC,L]
+
+
+RewriteRule ^viewclasses  viewclasses.php [NC,L]
+
+
+RewriteRule ^viewemployees  viewemployees.php [NC,L]
+
+
+RewriteRule ^viewheads  vieweheads1.php [NC,L]
+
+
+RewriteRule ^employeeslist  emppdf.php [NC,L]
+
+RewriteRule ^addblocks  addblocks.php [NC,L]
+
+RewriteRule ^viewblocks  viewblocks.php [NC,L]
+
+RewriteRule ^bpsreports  bpsreports.php [NC,L]
+RewriteRule ^addstreets  addstreets.php [NC,L]
+RewriteRule ^viewstreets  viewstreets.php [NC,L]
+
+
+RewriteRule ^addcategories  addcategories.php [NC,L]
+RewriteRule ^viewcategories  viewcategories.php [NC,L]
+
+RewriteRule ^studentslist  stupdf.php [NC,L]
+
+RewriteRule ^studentprint  studentprint.php [NC,L]
+RewriteRule ^studentslippdf  studentslippdf.php [NC,L]
+
+
+RewriteRule ^addplots  addplots.php [NC,L]
+
+RewriteRule ^viewplots  viewplots.php [NC,L]
+
+
+RewriteRule ^addcustomer  addcustomers.php [NC,L]
+
+RewriteRule ^adddealers  adddealers.php [NC,L]
+
+RewriteRule ^viewcustomer  viewcustomer.php [NC,L]
+RewriteRule ^viewdealers  viewdealers.php [NC,L]
+
+RewriteRule ^custdealreports  custdealreports.php [NC,L]
+
+
+
+
+RewriteRule ^classwiselistpdf  stupdf4.php [NC,L]
+
+
+
+
+RewriteRule ^pricelistpdf  pricelistpdf.php [NC,L]
+
+
+RewriteRule ^activestudentslist  stupdf1.php [NC,L]
+RewriteRule ^inactivestudentslist  stupdf2.php [NC,L]
+
+
+
+
+RewriteRule ^classeslist  classpdf.php [NC,L]
+
+
+RewriteRule ^workingreportpdf1  workingreportpdf1.php [NC,L]
+
+
+
+RewriteRule ^employeereports  reports.php [NC,L]
+
+
+
+RewriteRule ^loginreport  loginreport.php [NC,L]
+
+
+
+RewriteRule ^activeemployeeslist  emppdf1.php [NC,L]
+RewriteRule ^inactiveemployeeslist  emppdf2.php [NC,L]
+
+RewriteRule ^workingreportpdf  workingreportpdf.php [NC,L]
+
+RewriteRule ^email  email.php [NC,L]
+
